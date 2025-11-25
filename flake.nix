@@ -5,6 +5,7 @@
     treefmt-nix.url = "github:numtide/treefmt-nix";
     treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
     import-tree.url = "github:vic/import-tree";
+    crane.url = "github:ipetkov/crane";
   };
   outputs =
     inputs:
