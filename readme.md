@@ -1,3 +1,1 @@
-wq – work queue for improved sanity
-===================================
-
+# wq – work queue for improved sanity
