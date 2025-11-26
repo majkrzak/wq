@@ -21,10 +21,10 @@ impl ToKey for EventID {
 #[native_db]
 pub struct Event {
     #[primary_key]
-    id: EventID,
+    pub id: EventID,
     #[secondary_key]
-    key: String,
-    kind: EventKind,
+    pub key: String,
+    pub kind: EventKind,
 }
 
 #[derive(Serialize, Deserialize, PartialEq, Debug)]
