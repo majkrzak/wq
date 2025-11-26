@@ -8,6 +8,7 @@ pub struct State {
     queue: Vec<String>,
 }
 
+#[derive(Debug, Clone, Copy, PartialEq)]
 pub enum TransitionError {
     Unknown,
 }
@@ -42,6 +43,9 @@ impl State {
                 if self.queue.first() != Some(&e.key) {
                     Err(TransitionError::Unknown)?
                 };
+                if self.active != None {
+                    Err(TransitionError::Unknown)?
+                };
                 Ok(State {
                     queue: self
                         .queue
@@ -64,6 +68,13 @@ impl State {
                 })
             }
             _ => Ok(self.clone()),
+        }
+    }
+
+    pub fn new() -> State {
+        State {
+            active: None,
+            queue: vec![],
         }
     }
 }
