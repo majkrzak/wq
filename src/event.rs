@@ -22,6 +22,8 @@ impl ToKey for EventID {
 pub struct Event {
     #[primary_key]
     id: EventID,
+    #[secondary_key]
+    key: String,
     kind: EventKind,
 }
 
@@ -33,4 +35,14 @@ pub enum EventKind {
     Stop,
     Link(String),
     Comment(String),
+}
+
+impl Event {
+    pub fn new(key: String, kind: EventKind) -> Event {
+        Event {
+            id: EventID(Ulid::new()),
+            key,
+            kind,
+        }
+    }
 }

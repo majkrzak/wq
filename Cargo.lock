@@ -708,6 +708,7 @@ checksum = "f17a85883d4e6d00e8a97c586de764dabcc06133f7f1d55dce5cdc070ad7fe59"
 name = "wq"
 version = "0.0.0"
 dependencies = [
+ "anyhow",
  "clap",
  "native_db",
  "native_model",
