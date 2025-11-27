@@ -1,1 +1,1 @@
-# wq – work queue for improved sanity
+# `wq` – work queue CLI for improved sanity
