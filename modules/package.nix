@@ -1,7 +1,5 @@
 { inputs, ... }:
 {
-  imports = [
-  ];
   perSystem =
     { pkgs, ... }:
     let
