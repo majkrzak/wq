@@ -7,12 +7,5 @@
     import-tree.url = "github:vic/import-tree";
     crane.url = "github:ipetkov/crane";
   };
-  outputs =
-    inputs:
-    inputs.flake-parts.lib.mkFlake { inherit inputs; } (
-      inputs.nixpkgs.lib.pipe inputs.import-tree [
-        (i: i.filterNot (inputs.nixpkgs.lib.hasSuffix "/flake.nix"))
-        (i: i ./.)
-      ]
-    );
+  outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
 }
