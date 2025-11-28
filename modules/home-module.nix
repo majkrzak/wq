@@ -23,8 +23,8 @@
         enable = lib.mkEnableOption "wq";
         package = lib.mkPackageOption self'.package "wq" { };
       };
-      config = lib.mkIf cfg.enabled {
-        home.packages = [ cfg.packages ];
+      config = lib.mkIf cfg.enable {
+        home.packages = [ cfg.package ];
       };
     }
   );
