@@ -6,7 +6,7 @@
       craneLib = inputs.crane.mkLib pkgs;
     in
     {
-      packages.wg = craneLib.buildPackage {
+      packages.wq = craneLib.buildPackage {
         src = craneLib.cleanCargoSource ./..;
       };
     };

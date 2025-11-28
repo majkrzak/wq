@@ -7,7 +7,7 @@
   imports = [
     inputs.home-manager.flakeModules.home-manager
   ];
-  flake.homeModules.wg = moduleWithSystem (
+  flake.homeModules.wq = moduleWithSystem (
     { self', ... }:
     {
       lib,
@@ -15,12 +15,12 @@
       config,
     }:
     let
-      cfg = config.programs.wg;
+      cfg = config.programs.wq;
     in
     {
-      options.programs.wg = {
-        enable = lib.mkEnableOption "wg";
-        package = lib.mkPackageOption self'.package "wg" { };
+      options.programs.wq = {
+        enable = lib.mkEnableOption "wq";
+        package = lib.mkPackageOption self'.package "wq" { };
       };
       config = lib.mkIf cfg.enabled {
         home.packages = [ cfg.packages ];
