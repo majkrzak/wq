@@ -21,7 +21,7 @@
     {
       options.programs.wq = {
         enable = lib.mkEnableOption "wq";
-        package = lib.mkPackageOption self'.package "wq" { };
+        package = lib.mkPackageOption self'.packages "wq" { };
       };
       config = lib.mkIf cfg.enable {
         home.packages = [ cfg.package ];
