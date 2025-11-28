@@ -13,6 +13,7 @@
       lib,
       pkgs,
       config,
+      ...
     }:
     let
       cfg = config.programs.wq;
